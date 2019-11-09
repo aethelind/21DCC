@@ -62,9 +62,51 @@ const chooseStations = (stations) => {
 
 
 // Challenge 6
+const voterTurnout = (voter_signatures, voter_ids) => {
+  if(voter_signatures.length !== voter_ids.length){
+    return false
+  } else {
+    for(var i=0;i<voter_signatures.length;i++){
+      if(voter_signatures[i] !== voter_ids[i]){
+        return "FRAUD!"
+      }
+    }
+  }
+
+  return "All clear, we can count the votes!"
+}
+
+
 // Challenge 7
+const termTopics = (interviews) => {
+  var topics = [0, 0, 0];
+  for(var i in interviews){
+    if(interviews[i] == "smart city"){
+      topics[0]++
+    } else if(interviews[i] == "arts funding"){
+      topics[1]++
+    } else  if(interviews[i] == "transportation"){
+      topics[2]++
+    } 
+  }
+  return topics
+}
+
+
 // Challenge 8
+const smartGarbage = (trash, bins) => {
+    bins[trash]++;
+    return bins;
+}
+
+
 // Challenge 9
+const carPassing = (cars, speed) => {
+  cars.push({"time":Date.now(), "speed":speed})
+  return cars
+}
+
+
 // Challenge 10
 // Challenge 11
 // Challenge 12
