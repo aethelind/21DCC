@@ -108,6 +108,32 @@ const carPassing = (cars, speed) => {
 
 
 // Challenge 10
+const whereCanIPark = (spots, vehicle) => {
+  // get vehicle type (R, S, or M)
+  var type = vehicle.charAt(0).toUpperCase();
+  
+  // define which spot types this vehicle may use
+  var lookingFor = "R"
+  if(type == 'S'){
+    lookingFor = "RS"
+  } else if (type == 'M'){
+    lookingFor = "RSM"
+  }
+  
+  // go through each spot
+  for(var row in spots){
+    for(var col in spots[row]){
+      // check if spot at coords is a spot we can use
+      if(lookingFor.indexOf(spots[row][col]) !== -1){
+        return [col, row]
+      }
+    }
+  }
+  
+  return false
+}
+
+
 // Challenge 11
 // Challenge 12
 // Challenge 13
