@@ -135,6 +135,16 @@ const whereCanIPark = (spots, vehicle) => {
 
 
 // Challenge 11
+const busTimes = buses => {
+  let arrivals = {};
+  
+  for(var i in buses){
+    arrivals[i] = buses[i].distance/buses[i].speed
+  }
+  
+  return arrivals
+}
+
 // Challenge 12
 // Challenge 13
 // Challenge 14
