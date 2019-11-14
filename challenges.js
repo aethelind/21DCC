@@ -145,8 +145,52 @@ const busTimes = buses => {
   return arrivals
 }
 
+
 // Challenge 12
+const checkAir = function (samples, threshold) {
+  var dirty = 0;
+  
+  for(i in samples){
+    if(samples[i] == "dirty"){
+      dirty++;
+    }
+  }
+  
+  var t = dirty / samples.length
+  
+  if(t < threshold){
+    return "Clean"
+  } else {
+    return "Polluted"
+  }
+  
+}
+
+
 // Challenge 13
+const lightsOn = function(lights) {
+  for(var i in lights){
+    lights[i].on = true;
+  }
+  return lights
+}
+
+const lightsOff = function(lights) {
+  for(var i in lights){
+    lights[i].on = false;
+  }
+  return lights
+}
+
+const toggleLights = function(lights, lightsAreOn) {
+  if(lightsAreOn){
+    return lightsOff(lights)
+  } else {
+    return lightsOn(lights)
+  }
+}
+
+
 // Challenge 14
 // Challenge 15
 // Challenge 16
