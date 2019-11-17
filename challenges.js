@@ -192,8 +192,50 @@ const toggleLights = function(lights, lightsAreOn) {
 
 
 // Challenge 14
+const dynamicPricing = (numberOfPeople, distanceTraveled) => {
+  var price = 1
+  price += distanceTraveled * 0.25
+  if(numberOfPeople >= 30){
+    price += 0.25
+  }
+  return "$" + price.toFixed(2)
+}
+
+
 // Challenge 15
+const finalPosition = (moves) => {
+  var x = 0;
+  var y = 0;
+  
+  for(var i in moves){
+    switch(moves[i]){
+      case "north":
+        y++;
+        break;
+      case "south":
+        y--;
+        break;
+      case "east":
+        x++;
+        break;
+      case "west":
+        x--;
+        break;
+    }
+  }
+  
+  return [x, y]
+}
+
+
 // Challenge 16
+const festivalColours = color1 => {
+  var color2 = Math.abs(color1+150) % 360
+  var color3 = Math.abs(color1+210) % 360
+  return [color2, color3]
+}
+
+
 // Challenge 17
 // Challenge 18
 // Challenge 19
