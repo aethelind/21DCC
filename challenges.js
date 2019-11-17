@@ -237,6 +237,18 @@ const festivalColours = color1 => {
 
 
 // Challenge 17
+const judgeVegetable = (vegetables, metric) => {
+  var best = vegetables[0]
+  
+  for(var i in vegetables){
+    if (vegetables[i][metric] > best[metric]){
+      best = vegetables[i]
+    }
+  }
+  
+  return best.submitter
+}
+
 // Challenge 18
 // Challenge 19
 // Challenge 20
