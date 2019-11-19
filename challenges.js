@@ -278,5 +278,28 @@ const bestOdds = (tickets, raffleEntries) => {
 
 
 // Challenge 19
+const pumpkinSpice = money => {
+  var ps = [0,0,0,0];
+  
+  while(money >= 5){
+    money = money - 5;
+    ps[0]++;
+    ps[3]+=30;
+  }
+  while(money >= 3){
+    money = money - 3;
+    ps[1]++;
+    ps[3]+=15;
+  }
+  while(money >= 1){
+    money = money - 1;
+    ps[2]++;
+    ps[3]+=3;
+  }  
+  
+  return ps;
+}
+
+
 // Challenge 20
 // Challenge 21
