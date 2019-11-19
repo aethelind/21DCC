@@ -1,19 +1,19 @@
 // Challenge 1
   const doorToDoor = (volunteers, neighbourhoods) => {
-    return neighbourhoods.length / volunteers.length   
+    return neighbourhoods.length / volunteers.length;   
   }
 
 
 // Challenge 2
 const interviewAnswer = (topic) => {
   if (topic == "arts funding") {
-    return "We'll have to get creative!"
+    return "We'll have to get creative!";
   } else if (topic == "economy") {
-    return "Time is money."
+    return "Time is money.";
   } else if (topic == "transportation") {
-    return "It's going to be a long road, so we better get moving."
+    return "It's going to be a long road, so we better get moving.";
   } else {
-    return "QUACK!!"
+    return "QUACK!!";
   }
 }
 
@@ -39,7 +39,7 @@ const registerToVote = (name, unregisteredVoters) => {
   var i = unregisteredVoters.indexOf(name);
 
   if(i!==-1){
-    unregisteredVoters.splice(i, 1)
+    unregisteredVoters.splice(i, 1);
   }
   
   return unregisteredVoters;
@@ -64,16 +64,16 @@ const chooseStations = (stations) => {
 // Challenge 6
 const voterTurnout = (voter_signatures, voter_ids) => {
   if(voter_signatures.length !== voter_ids.length){
-    return false
+    return false;
   } else {
     for(var i=0;i<voter_signatures.length;i++){
       if(voter_signatures[i] !== voter_ids[i]){
-        return "FRAUD!"
+        return "FRAUD!";
       }
     }
   }
 
-  return "All clear, we can count the votes!"
+  return "All clear, we can count the votes!";
 }
 
 
@@ -82,14 +82,14 @@ const termTopics = (interviews) => {
   var topics = [0, 0, 0];
   for(var i in interviews){
     if(interviews[i] == "smart city"){
-      topics[0]++
+      topics[0]++;
     } else if(interviews[i] == "arts funding"){
-      topics[1]++
+      topics[1]++;
     } else  if(interviews[i] == "transportation"){
-      topics[2]++
+      topics[2]++;
     } 
   }
-  return topics
+  return topics;
 }
 
 
@@ -102,8 +102,8 @@ const smartGarbage = (trash, bins) => {
 
 // Challenge 9
 const carPassing = (cars, speed) => {
-  cars.push({"time":Date.now(), "speed":speed})
-  return cars
+  cars.push({"time":Date.now(), "speed":speed});
+  return cars;
 }
 
 
@@ -113,11 +113,11 @@ const whereCanIPark = (spots, vehicle) => {
   var type = vehicle.charAt(0).toUpperCase();
   
   // define which spot types this vehicle may use
-  var lookingFor = "R"
+  var lookingFor = "R";
   if(type == 'S'){
-    lookingFor = "RS"
+    lookingFor = "RS";
   } else if (type == 'M'){
-    lookingFor = "RSM"
+    lookingFor = "RSM";
   }
   
   // go through each spot
@@ -125,12 +125,12 @@ const whereCanIPark = (spots, vehicle) => {
     for(var col in spots[row]){
       // check if spot at coords is a spot we can use
       if(lookingFor.indexOf(spots[row][col]) !== -1){
-        return [col, row]
+        return [col, row];
       }
     }
   }
   
-  return false
+  return false;
 }
 
 
@@ -139,10 +139,10 @@ const busTimes = buses => {
   let arrivals = {};
   
   for(var i in buses){
-    arrivals[i] = buses[i].distance/buses[i].speed
+    arrivals[i] = buses[i].distance/buses[i].speed;
   }
   
-  return arrivals
+  return arrivals;
 }
 
 
@@ -156,12 +156,12 @@ const checkAir = function (samples, threshold) {
     }
   }
   
-  var t = dirty / samples.length
+  var t = dirty / samples.length;
   
   if(t < threshold){
-    return "Clean"
+    return "Clean";
   } else {
-    return "Polluted"
+    return "Polluted";
   }
   
 }
@@ -172,33 +172,33 @@ const lightsOn = function(lights) {
   for(var i in lights){
     lights[i].on = true;
   }
-  return lights
+  return lights;
 }
 
 const lightsOff = function(lights) {
   for(var i in lights){
     lights[i].on = false;
   }
-  return lights
+  return lights;
 }
 
 const toggleLights = function(lights, lightsAreOn) {
   if(lightsAreOn){
-    return lightsOff(lights)
+    return lightsOff(lights);
   } else {
-    return lightsOn(lights)
+    return lightsOn(lights);
   }
 }
 
 
 // Challenge 14
 const dynamicPricing = (numberOfPeople, distanceTraveled) => {
-  var price = 1
-  price += distanceTraveled * 0.25
+  var price = 1;
+  price += distanceTraveled * 0.25;
   if(numberOfPeople >= 30){
-    price += 0.25
+    price += 0.25;
   }
-  return "$" + price.toFixed(2)
+  return "$" + price.toFixed(2);
 }
 
 
@@ -224,29 +224,29 @@ const finalPosition = (moves) => {
     }
   }
   
-  return [x, y]
+  return [x, y];
 }
 
 
 // Challenge 16
 const festivalColours = color1 => {
-  var color2 = Math.abs(color1+150) % 360
-  var color3 = Math.abs(color1+210) % 360
-  return [color2, color3]
+  var color2 = Math.abs(color1+150) % 360;
+  var color3 = Math.abs(color1+210) % 360;
+  return [color2, color3];
 }
 
 
 // Challenge 17
 const judgeVegetable = (vegetables, metric) => {
-  var best = vegetables[0]
+  var best = vegetables[0];
   
   for(var i in vegetables){
     if (vegetables[i][metric] > best[metric]){
-      best = vegetables[i]
+      best = vegetables[i];
     }
   }
   
-  return best.submitter
+  return best.submitter;
 }
 
 // Challenge 18
