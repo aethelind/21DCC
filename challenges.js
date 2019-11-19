@@ -250,6 +250,33 @@ const judgeVegetable = (vegetables, metric) => {
 }
 
 // Challenge 18
+const countTickets = (tickets) => {
+  var count = {"red": 0, "green": 0, "blue": 0};
+  
+  for(var i in tickets){
+    count[tickets[i]]++;
+  }
+  
+  return count;
+}
+
+const bestOdds = (tickets, raffleEntries) => {
+  count = countTickets(tickets);
+  
+  r = count["red"] / raffleEntries["red"];
+  g = count["green"] / raffleEntries["green"];
+  b = count["blue"] / raffleEntries["blue"];
+  
+  if(r > g && r > b){
+    return "You have the best odds of winning the red raffle.";
+  } else if(g > b){
+    return "You have the best odds of winning the green raffle.";
+  } else {
+    return "You have the best odds of winning the blue raffle.";
+  }
+}
+
+
 // Challenge 19
 // Challenge 20
 // Challenge 21
