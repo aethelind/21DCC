@@ -338,3 +338,12 @@ const totalVolume = function (solids) {
 
 
 // Challenge 21
+const chooseRecipe = function(bakeryA, bakeryB, recipes) {
+  for(var i in recipes){
+    console.log(bakeryA.includes(recipes[i].ingredients[0]))
+    if((bakeryA.includes(recipes[i].ingredients[0]) && bakeryB.includes(recipes[i].ingredients[1])) || (bakeryA.includes(recipes[i].ingredients[1]) && bakeryB.includes(recipes[i].ingredients[0]))){
+      return recipes[i].name;
+    }
+    
+  }
+}
